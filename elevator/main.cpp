@@ -7,22 +7,13 @@ using namespace std;
 
 class Elevator
 {
-public:
-    Elevator(int minFloor, int maxFloor, int maxCapacity)
-        : minFloor(minFloor), maxFloor(maxFloor), maxCapacity(maxCapacity), currentFloor(0), currentCapacity(0), direction(UP) {}
-
-    ~Elevator() = default;
-
-    void start();
-
-private:
     enum Direction
     {
         UP,
         DOWN
     };
 
-     vector<int> requests;
+    vector<int> requests;
     int minFloor;
     int maxFloor;
     int currentFloor;
@@ -37,6 +28,14 @@ private:
     void processRequests();
     void displayElevatorStatus() const;
     void removeCompletedRequests(int floor);
+     
+    public:
+    Elevator(int minFloor, int maxFloor, int maxCapacity)
+        : minFloor(minFloor), maxFloor(maxFloor), maxCapacity(maxCapacity), currentFloor(0), currentCapacity(0), direction(UP) {}
+
+    ~Elevator() = default;
+
+    void start();
 };
 
 
